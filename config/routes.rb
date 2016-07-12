@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'growth_rates/index'
+
+  get 'growth_rates/show'
+
   get 'dividends/index'
 
   get 'dividends/show'
