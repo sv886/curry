@@ -1,2 +1,24 @@
-<h1>Dividends#index</h1>
-<p>Find me in app/views/dividends/index.html.erb</p>
+<h1>Dividends History</h1>
+
+<% if @dividends.blank? %>
+  <em>nothing here shithead!</em>
+<% else %>
+  <table class="table table-striped table-sm table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Symbol</th>
+        <th>Date</th>
+        <th>Payment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @dividends.each do |dividend| %>
+      <tr>
+        <td><%= dividend.symbol %></td>
+        <td><%= dividend.date %></td>
+        <td><%= dividend.payment %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
