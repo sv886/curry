@@ -1,6 +1,6 @@
 <h1>Dividends History</h1>
 
-<%= debug @dividends %>
+<!-- <%= debug @dividends %> -->
 
 <% if @dividends.blank? %>
   <em>nothing here shithead!</em>
@@ -16,9 +16,9 @@
     <tbody>
       <% @dividends.each do |dividend| %>
       <tr>
-        <td><%= dividend["symbol"] %></td>
-        <td><%= dividend["date"] %></td>
-        <td><%= dividend["payment"] %></td>
+        <td><%= dividend.symbol %></td>
+        <td><%= dividend.date %></td>
+        <td><%= number_to_currency(dividend.payment) %></td>
       </tr>
       <% end %>
     </tbody>

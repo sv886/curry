@@ -6,11 +6,19 @@ class DividendsController < ApplicationController
 
     CSV.foreach(Rails.root + "csv/DividendHistory.csv", headers: true) do |row|
       #shovel csv info into array above
-      @dividends << row.to_h
+
+      dividend = Dividend.new
+      dividend.symbol = row.to_h["symbol"]
+      dividend.date = row.to_h["date"]
+      dividend.payment = row.to_h["payment"].to_f
+
+      @dividends << dividend
+
     end
 
   end
 
   def show
   end
+
 end
