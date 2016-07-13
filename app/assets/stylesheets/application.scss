@@ -37,3 +37,13 @@ $accents: #BDC3C7;
     }
   }
 }
+.header_search {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
