@@ -2,3 +2,38 @@
 @import 'bootstrap';
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+$main_color: #7F8C8D;
+$background: #ECF0F1;
+$accents: #BDC3C7;
+
+.gi-2x{font-size: 2em;}
+.gi-3x{font-size: 3em;}
+.gi-4x{font-size: 4em;}
+.gi-5x{font-size: 5em;}
+
+.header {
+  background-color: $main_color;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid darken($main_color, 8%);
+  ul {
+    display: flex;
+    flex-direction: row;
+    li {
+      display: flex;
+      width: 50%;
+      border-right: 2px solid darken($main_color, 5%);
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      i {
+        color: $accents;
+      }
+    }
+    li:last-child {
+      border-right: none;
+    }
+  }
+}

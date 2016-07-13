@@ -1,2 +1,38 @@
-<h1>GrowthRates#index</h1>
-<p>Find me in app/views/growth_rates/index.html.erb</p>
+<h1>Dividend Growth Rates</h1>
+
+<!-- <%= debug @dividends %> -->
+
+<% if @growth_rates.blank? %>
+  <em>No Info Available</em>
+<% else %>
+  <table class="table table-striped table-sm table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Symbol</th>
+        <th>Company Name</th>
+        <th>Yrs of Dividend Growth</th>
+        <th>Status</th>
+        <th>Date of Last Increase</th>
+        <th>1 Yr Growth Rate</th>
+        <th>3 Yr Growth Rate</th>
+        <th>5 Yr Growth Rate</th>
+        <th>10 Yr Growth Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @growth_rates.each do |growth_rate| %>
+      <tr>
+        <td><%= growth_rate.symbol %></td>
+        <td><%= growth_rate.company_name %></td>
+        <td><%= growth_rate.years_dividend_growth %></td>
+        <td><%= growth_rate.status %></td>
+        <td><%= growth_rate.last_increase %></td>
+        <td><%= number_to_percentage(growth_rate.one_yr_growth) %></td>
+        <td><%= number_to_percentage(growth_rate.three_yr_growth) %></td>
+        <td><%= number_to_percentage(growth_rate.five_yr_growth) %></td>
+        <td><%= number_to_percentage(growth_rate.ten_yr_growth) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
