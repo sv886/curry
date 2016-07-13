@@ -1,3 +1,4 @@
-Symbol,Company Name,Years of Dividend Growth,Status,Date of Last Increase,1 year growth rate,3 year growth rate,5 year growth rate,10 year growth rate
-KO,The Coca-Cola Company,54,Dividend Champion,2/18/2016,8.20%,8.97%,8.45%,8.95%
-ACN,Accenture plc,11,Dividend Contender,9/24/2015,8.72%,12.60%,20.77%,21.60%
+symbol,company_name,years_dividend_growth,status,last_increase,one_yr_growth,three_yr_growth,five_yr_growth,ten_yr_growth
+KO,The Coca-Cola Company,54,Dividend Champion,2/18/2016,8.20,8.97,8.45,8.95
+ACN,Accenture plc,11,Dividend Contender,9/24/2015,8.72,12.60,20.77,21.60
+NEW,TEST,99,TEST,1/1/1999,1.11,2.22,3.33,4.44

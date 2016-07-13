@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'dividends#index'
   get 'dividends/:id' => 'dividends#show'
 
-  get 'growth_rates/index' => 'growth_rates#index'
+  get 'growth_rates' => 'growth_rates#index', as: :g_rates
   get 'growth_rates/:id' => 'growth_rates#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
