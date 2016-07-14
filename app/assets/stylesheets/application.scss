@@ -12,6 +12,10 @@ $accents: #BDC3C7;
 .gi-4x{font-size: 4em;}
 .gi-5x{font-size: 5em;}
 
+body {
+  background: url(image-path('pipbg.jpg'));
+}
+
 .header {
   background-color: $main_color;
   width: 100%;
