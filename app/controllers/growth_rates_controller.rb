@@ -2,12 +2,16 @@ require 'csv'
 
 class GrowthRatesController < ApplicationController
   def index
+    @growth_rates = fetch_growth_rates
+      # jwo Rails + csv vid @ 22 mins
+  end
 
-    @growth_rates = []
+  def show
+  end
 
+  def fetch_growth_rates
+    growth_rates = []
     CSV.foreach(Rails.root + "csv/Data1.csv", headers: true) do |row|
-      #shovel csv info into array above
-
       growth_rate = GrowthRate.new
       growth_rate.symbol = row.to_h["symbol"]
       growth_rate.company_name = row.to_h["company_name"]
@@ -18,15 +22,11 @@ class GrowthRatesController < ApplicationController
       growth_rate.three_yr_growth = row.to_h["three_yr_growth"].to_f
       growth_rate.five_yr_growth = row.to_h["five_yr_growth"].to_f
       growth_rate.ten_yr_growth = row.to_h["ten_yr_growth"].to_f
-
-      @growth_rates << growth_rate
-
+      #shovel csv info into array above
+      growth_rates << growth_rate
     end
-
-      # jwo Rails + csv vid @ 22 mins
-
+    # return array
+    growth_rates
   end
 
-  def show
-  end
 end
